@@ -152,9 +152,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/ng-cookie-consent-webcom",
+            "customWebpackConfig": {
+              "path": "projects/ng-cookie-consent-webcom/webpack.config.js",
+              "mergeStrategies": {
+                "externals": "replace"
+              }
+            },
             "index": "projects/ng-cookie-consent-webcom/src/index.html",
             "main": "projects/ng-cookie-consent-webcom/src/main.ts",
             "polyfills": "projects/ng-cookie-consent-webcom/src/polyfills.ts",
