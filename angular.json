@@ -33,6 +33,214 @@
           }
         }
       }
+    },
+    "ng-cookie-example": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/ng-cookie-example",
+      "sourceRoot": "projects/ng-cookie-example/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ng-cookie-example",
+            "index": "projects/ng-cookie-example/src/index.html",
+            "main": "projects/ng-cookie-example/src/main.ts",
+            "polyfills": "projects/ng-cookie-example/src/polyfills.ts",
+            "tsConfig": "projects/ng-cookie-example/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ng-cookie-example/src/favicon.ico",
+              "projects/ng-cookie-example/src/assets"
+            ],
+            "styles": [
+              "projects/ng-cookie-example/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ng-cookie-example/src/environments/environment.ts",
+                  "with": "projects/ng-cookie-example/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ng-cookie-example:build:production"
+            },
+            "development": {
+              "browserTarget": "ng-cookie-example:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng-cookie-example:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-cookie-example/src/test.ts",
+            "polyfills": "projects/ng-cookie-example/src/polyfills.ts",
+            "tsConfig": "projects/ng-cookie-example/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-cookie-example/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ng-cookie-example/src/favicon.ico",
+              "projects/ng-cookie-example/src/assets"
+            ],
+            "styles": [
+              "projects/ng-cookie-example/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "ng-cookie-consent-webcom": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/ng-cookie-consent-webcom",
+      "sourceRoot": "projects/ng-cookie-consent-webcom/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ng-cookie-consent-webcom",
+            "index": "projects/ng-cookie-consent-webcom/src/index.html",
+            "main": "projects/ng-cookie-consent-webcom/src/main.ts",
+            "polyfills": "projects/ng-cookie-consent-webcom/src/polyfills.ts",
+            "tsConfig": "projects/ng-cookie-consent-webcom/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ng-cookie-consent-webcom/src/favicon.ico",
+              "projects/ng-cookie-consent-webcom/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/ng-cookie-consent-webcom/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ng-cookie-consent-webcom/src/environments/environment.ts",
+                  "with": "projects/ng-cookie-consent-webcom/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ng-cookie-consent-webcom:build:production"
+            },
+            "development": {
+              "browserTarget": "ng-cookie-consent-webcom:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng-cookie-consent-webcom:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-cookie-consent-webcom/src/test.ts",
+            "polyfills": "projects/ng-cookie-consent-webcom/src/polyfills.ts",
+            "tsConfig": "projects/ng-cookie-consent-webcom/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-cookie-consent-webcom/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ng-cookie-consent-webcom/src/favicon.ico",
+              "projects/ng-cookie-consent-webcom/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/ng-cookie-consent-webcom/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-cookie-consent"
