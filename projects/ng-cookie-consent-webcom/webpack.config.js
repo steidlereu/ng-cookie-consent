@@ -1,6 +1,6 @@
 module.exports = {
     output: {
-      jsonpFunction: 'webpackJsonpNgCookieConsentWebcom',
+      chunkLoadingGlobal: 'webpackJsonpNgCookieConsentWebcom',
       library: 'ngCookieConsentWebcom'
     }
   };
