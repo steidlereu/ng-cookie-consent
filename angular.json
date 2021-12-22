@@ -64,7 +64,9 @@
             "styles": [
               "projects/ng-cookie-example/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "output/components/ng-cookie-consent-webcom.js"
+            ]
           },
           "configurations": {
             "production": {

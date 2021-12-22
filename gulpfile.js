@@ -12,16 +12,16 @@ function cleanTask() {
 
 function complileTask() {
   var path = __dirname + '/dist/ng-cookie-consent-webcom/';
-  var deployPath = __dirname + '/output/components';
+  var deployPath = __dirname + '/dist/ng-cookie-consent-webcom';
 
   var css = fs.readFileSync(path + 'styles.css', 'utf8');
   css = css.replace(/\r?\n|\r/g, " ");
 
   var js = `
-    var style = document.createElement('style');
-    style.innerHTML = '` + css + `';
-    document.body.appendChild(style);
-  `;
+      var style = document.createElement('style');
+      style.innerHTML = '` + css + `';
+      document.body.appendChild(style);
+    `;
 
   return file('styles.js', js, { src: true })
     .pipe(dest(deployPath));
@@ -32,6 +32,8 @@ function webcomTask() {
     var deployPath = __dirname + '/output/components';
 
     return src([
+        path + 'styles.js'
+        ,
         path + 'polyfills.js',
         path + 'runtime.js',
         path + 'main.js',
@@ -40,4 +42,4 @@ function webcomTask() {
       .pipe(dest(deployPath));
 }
 
-exports.default = series(cleanTask, complileTask);
+exports.default = series(complileTask, webcomTask);
