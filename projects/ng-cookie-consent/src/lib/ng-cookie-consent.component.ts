@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
     <p>
       ng-cookie-consent works!
     </p>
+    <lib-ng-cookie-consent-dialog></lib-ng-cookie-consent-dialog>
   `,
   styles: [
   ]

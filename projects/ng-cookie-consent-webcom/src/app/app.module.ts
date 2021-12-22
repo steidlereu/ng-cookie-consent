@@ -4,6 +4,7 @@ import {createCustomElement} from '@angular/elements';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgCookieConsentModule } from 'projects/ng-cookie-consent/src/public-api';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgCookieConsentModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,5 +3,8 @@
   "dest": "../../dist/ng-cookie-consent",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": [
+    "@angular/material"
+  ]
 }
