@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NgCookieConsentConfig } from './ng-cookie-consent-config';
 
 @Component({
   selector: 'lib-ng-cookie-consent',
-  template: `
-    <p>
-      ng-cookie-consent works!
-    </p>
-    <lib-ng-cookie-consent-dialog></lib-ng-cookie-consent-dialog>
-  `,
-  styles: [
-  ]
+  templateUrl: './ng-cookie-consent.component.html',
+  styleUrls: ['./ng-cookie-consent.component.css']
 })
 export class NgCookieConsentComponent implements OnInit {
+
+  @Input() config: NgCookieConsentConfig | undefined;
 
   constructor() { }
 

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DialogContentComponent } from './dialog-content/dialog-content.component';
 import {MatDialog} from '@angular/material/dialog';
+import { NgCookieConsentConfig } from '../ng-cookie-consent-config';
 
 @Component({
   selector: 'lib-ng-cookie-consent-dialog',
@@ -8,6 +9,8 @@ import {MatDialog} from '@angular/material/dialog';
   styleUrls: ['./ng-cookie-consent-dialog.component.css']
 })
 export class NgCookieConsentDialogComponent implements OnInit {
+
+  @Input() config: NgCookieConsentConfig | undefined;
 
   constructor(public dialog: MatDialog) {}
 

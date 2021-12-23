@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NgCookieConsentConfig } from '../../ng-cookie-consent-config';
 
 @Component({
   selector: 'lib-dialog-content',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dialog-content.component.css']
 })
 export class DialogContentComponent implements OnInit {
+
+  @Input() config: NgCookieConsentConfig | undefined;
 
   constructor() { }
 

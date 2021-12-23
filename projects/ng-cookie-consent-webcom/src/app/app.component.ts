@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { NgCookieConsentConfig } from 'projects/ng-cookie-consent/src/lib/ng-cookie-consent-config';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  @Input() config: NgCookieConsentConfig | undefined;
+
   title = 'ng-cookie-consent-webcom';
 }
