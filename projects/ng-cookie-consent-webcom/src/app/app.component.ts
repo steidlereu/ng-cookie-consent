@@ -8,7 +8,13 @@ import { NgCookieConsentConfig } from 'projects/ng-cookie-consent/src/lib/ng-coo
 })
 export class AppComponent {
 
-  @Input() config: NgCookieConsentConfig | undefined;
+  @Input() config: NgCookieConsentConfig = {
+    "cookieBannerHeaderText": "test",
+    "cookieBannerTeaserText": "string",
+    "cookieBannerAcceptButtonText": "string",
+    "cookieBannerSettingsButtonText": "string",
+    "cookieSettingsArray": []
+};
 
   title = 'ng-cookie-consent-webcom';
 }

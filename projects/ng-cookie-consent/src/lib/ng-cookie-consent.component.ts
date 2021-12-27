@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgCookieConsentConfig } from './ng-cookie-consent-config';
+import { NgCookieConsentService } from './ng-cookie-consent.service';
 
 @Component({
   selector: 'lib-ng-cookie-consent',
@@ -8,11 +9,13 @@ import { NgCookieConsentConfig } from './ng-cookie-consent-config';
 })
 export class NgCookieConsentComponent implements OnInit {
 
-  @Input() config: NgCookieConsentConfig | undefined;
+  @Input()
+  config!: NgCookieConsentConfig;
 
-  constructor() { }
+  constructor(public ngCookieConsentService: NgCookieConsentService) { }
 
   ngOnInit(): void {
+    this.ngCookieConsentService.setConfig(this.config);
   }
 
 }

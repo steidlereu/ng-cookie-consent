@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgCookieConsentConfig } from '../../ng-cookie-consent-config';
+import { NgCookieConsentService } from '../../ng-cookie-consent.service';
 
 @Component({
   selector: 'lib-dialog-content',
@@ -8,11 +9,18 @@ import { NgCookieConsentConfig } from '../../ng-cookie-consent-config';
 })
 export class DialogContentComponent implements OnInit {
 
-  @Input() config: NgCookieConsentConfig | undefined;
+  config: NgCookieConsentConfig | undefined;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(public ngCookieConsentService: NgCookieConsentService) {
+    this.ngCookieConsentService.getConfigSub().subscribe(
+      config => {
+        this.config = config;
+        alert(config.length);
+        alert(config);
+      }
+    );
   }
+
+  ngOnInit(): void {}
 
 }

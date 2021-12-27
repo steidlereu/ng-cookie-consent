@@ -10,8 +10,6 @@ import { NgCookieConsentConfig } from '../ng-cookie-consent-config';
 })
 export class NgCookieConsentDialogComponent implements OnInit {
 
-  @Input() config: NgCookieConsentConfig | undefined;
-
   constructor(public dialog: MatDialog) {}
 
   openDialog() {
