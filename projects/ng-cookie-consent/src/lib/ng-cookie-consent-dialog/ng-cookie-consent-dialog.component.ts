@@ -13,7 +13,7 @@ export class NgCookieConsentDialogComponent implements OnInit {
   constructor(public dialog: MatDialog) {}
 
   openDialog() {
-    const dialogRef = this.dialog.open(DialogContentComponent);
+    const dialogRef = this.dialog.open(DialogContentComponent, {restoreFocus: true, disableClose: true});
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

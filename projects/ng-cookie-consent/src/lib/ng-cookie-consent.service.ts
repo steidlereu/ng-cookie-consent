@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { NgCookieConsentConfig } from './ng-cookie-consent-config';
 
 @Injectable({
@@ -7,7 +7,7 @@ import { NgCookieConsentConfig } from './ng-cookie-consent-config';
 })
 export class NgCookieConsentService {
 
-  configSub = new Subject();
+  configSub = new BehaviorSubject<any>(null);
 
   constructor() { }
 
@@ -15,7 +15,7 @@ export class NgCookieConsentService {
     this.configSub.next(config);
   }
 
-  getConfigSub(): Subject<any> {
+  getConfigSub(): Subject<NgCookieConsentConfig> {
     return this.configSub;
   }
  

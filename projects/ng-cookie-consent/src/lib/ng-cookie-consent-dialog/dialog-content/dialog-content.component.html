@@ -1,9 +1,12 @@
 <h2 mat-dialog-title>{{config?.cookieBannerHeaderText}}</h2>
 <mat-dialog-content class="mat-typography">
-    {{config?.cookieBannerTeaserText}}
+    <div [innerHTML]="config?.cookieBannerTeaserHtml"></div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
     <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>
+        {{config?.cookieBannerAcceptButtonText}}
+    </button>
+    <button mat-stroked-button color="primary">
         {{config?.cookieBannerSettingsButtonText}}
     </button>
 </mat-dialog-actions>

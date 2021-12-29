@@ -1,8 +1,14 @@
+import { NgCookieConsentConfigSettingItem } from "./ng-cookie-consent-config-setting-item";
 
 export interface NgCookieConsentConfig {
+    id: string;
+    host: string;
     cookieBannerHeaderText: string;
-    cookieBannerTeaserText: string;
+    cookieBannerTeaserHtml: string;
+    cookieBannerSettingsHeaderText: string;
     cookieBannerAcceptButtonText: string;
     cookieBannerSettingsButtonText: string;
-    cookieSettingsArray: any[];
+    cookieBannerAcceptSettingsButtonText: string;
+    cookieBannerBackButtonText: string;
+    cookieSettingsArray: NgCookieConsentConfigSettingItem[];
 }

@@ -11,16 +11,14 @@ export class DialogContentComponent implements OnInit {
 
   config: NgCookieConsentConfig | undefined;
 
-  constructor(public ngCookieConsentService: NgCookieConsentService) {
+  constructor(public ngCookieConsentService: NgCookieConsentService) {}
+
+  ngOnInit(): void {
     this.ngCookieConsentService.getConfigSub().subscribe(
       config => {
         this.config = config;
-        alert(config.length);
         alert(config);
       }
     );
   }
-
-  ngOnInit(): void {}
-
 }

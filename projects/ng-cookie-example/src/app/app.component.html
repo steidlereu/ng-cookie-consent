@@ -1,11 +1,11 @@
-<h1>Hello World Example</h1>
-<script>
-    var settings = {
-        "cookieBannerHeaderText": "test",
-        "cookieBannerTeaserText": "string",
-        "cookieBannerAcceptButtonText": "string",
-        "cookieBannerSettingsButtonText": "string",
+<h1>steidlereu/ng-cookie-consent Webcomponent example</h1>
+<ng-cookie-consent 
+    config='{
+        "cookieBannerHeaderText": "Privacy policy",
+        "cookieBannerTeaserText": "We use cookies to guarantee technical security and to guarantee you the best possible service when using our website, as well as for marketing purposes.",
+        "cookieBannerAcceptButtonText": "allow all cookies",
+        "cookieBannerSettingsButtonText": "cookie settings",
         "cookieSettingsArray": []
-    };
-</script>
-<ng-cookie-consent config="settings"></ng-cookie-consent>
+      }'
+> 
+</ng-cookie-consent>

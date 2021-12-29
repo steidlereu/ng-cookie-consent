@@ -3,6 +3,7 @@ import { NgCookieConsentComponent } from './ng-cookie-consent.component';
 import { NgCookieConsentDialogComponent } from './ng-cookie-consent-dialog/ng-cookie-consent-dialog.component';
 import { DialogContentComponent } from './ng-cookie-consent-dialog/dialog-content/dialog-content.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -13,7 +14,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     DialogContentComponent
   ],
   imports: [
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule,
   ],
   exports: [
     NgCookieConsentComponent

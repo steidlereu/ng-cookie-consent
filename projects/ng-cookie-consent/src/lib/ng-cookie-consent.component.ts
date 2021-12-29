@@ -9,13 +9,15 @@ import { NgCookieConsentService } from './ng-cookie-consent.service';
 })
 export class NgCookieConsentComponent implements OnInit {
 
-  @Input()
-  config!: NgCookieConsentConfig;
+  @Input() config!: NgCookieConsentConfig;
+
+  id = 'ng-cookie-consent';
 
   constructor(public ngCookieConsentService: NgCookieConsentService) { }
 
   ngOnInit(): void {
     this.ngCookieConsentService.setConfig(this.config);
+    this.id = this.id + '-' + this.config.id;
   }
 
 }
