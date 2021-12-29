@@ -1,8 +1,12 @@
+import * as internal from "stream";
 import { NgCookieConsentConfigSettingItem } from "./ng-cookie-consent-config-setting-item";
 
 export interface NgCookieConsentConfig {
     id: string;
-    host: string;
+    cookieHost: string;
+    cookieName: string;
+    cookieDuration: number;
+    cookiePath: string;
     cookieBannerHeaderText: string;
     cookieBannerTeaserHtml: string;
     cookieBannerSettingsHeaderText: string;
