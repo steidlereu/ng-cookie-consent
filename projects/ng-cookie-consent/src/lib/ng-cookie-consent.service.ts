@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { CookieService } from 'ngx-cookie';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { NgCookieConsentConfig } from './ng-cookie-consent-config';
 
@@ -7,9 +8,12 @@ import { NgCookieConsentConfig } from './ng-cookie-consent-config';
 })
 export class NgCookieConsentService {
 
+  config: NgCookieConsentConfig | null = null;
   configSub = new BehaviorSubject<any>(null);
 
-  constructor() { }
+  constructor(
+    public cookieService: CookieService
+    ) { }
 
   setConfig(config: NgCookieConsentConfig): void {
     this.configSub.next(config);
@@ -17,6 +21,30 @@ export class NgCookieConsentService {
 
   getConfigSub(): Subject<NgCookieConsentConfig> {
     return this.configSub;
+  }
+
+  getConsent(): any {
+    this.readConfig();
+
+    if (this.config == null) {
+      return {};
+    }
+
+    return JSON.parse(this.cookieService.get(this.config.cookieName));
+  }
+
+  hasConsent(): boolean {
+    return this.getConsent().length > 0;
+  }
+
+  private readConfig() {
+    if (this.config == null) {
+      this.getConfigSub().subscribe(
+        config => {
+          this.config = config;
+        }
+      );
+    }
   }
  
 }

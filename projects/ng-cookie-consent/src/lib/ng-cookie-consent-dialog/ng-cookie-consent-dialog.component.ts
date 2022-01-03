@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { DialogContentComponent } from './dialog-content/dialog-content.component';
 import {MatDialog} from '@angular/material/dialog';
 import { NgCookieConsentConfig } from '../ng-cookie-consent-config';
+import { NgCookieConsentService } from '../ng-cookie-consent.service';
 
 @Component({
   selector: 'lib-ng-cookie-consent-dialog',
@@ -10,7 +11,10 @@ import { NgCookieConsentConfig } from '../ng-cookie-consent-config';
 })
 export class NgCookieConsentDialogComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) {}
+  constructor(
+    public dialog: MatDialog,
+    public ngCookieConsentService: NgCookieConsentService
+    ) {}
 
   openDialog() {
     const dialogRef = this.dialog.open(DialogContentComponent, {restoreFocus: true, disableClose: true});
@@ -21,6 +25,9 @@ export class NgCookieConsentDialogComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (this.ngCookieConsentService.hasConsent() == false) {
+      this.openDialog();
+    }
   }
 
 }

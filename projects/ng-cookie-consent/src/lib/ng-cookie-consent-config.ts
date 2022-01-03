@@ -1,4 +1,3 @@
-import * as internal from "stream";
 import { NgCookieConsentConfigSettingItem } from "./ng-cookie-consent-config-setting-item";
 
 export interface NgCookieConsentConfig {

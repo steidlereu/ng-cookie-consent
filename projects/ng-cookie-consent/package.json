@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@angular/material": "^13.1.1",
+    "ngx-cookie": "^5.0.2",
     "tslib": "^2.3.0"
   },
   "devDependencies": {

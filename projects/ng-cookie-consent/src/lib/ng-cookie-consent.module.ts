@@ -4,6 +4,7 @@ import { NgCookieConsentDialogComponent } from './ng-cookie-consent-dialog/ng-co
 import { DialogContentComponent } from './ng-cookie-consent-dialog/dialog-content/dialog-content.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
+import { CookieModule } from 'ngx-cookie';
 
 
 
@@ -16,6 +17,7 @@ import {MatButtonModule} from '@angular/material/button';
   imports: [
     MatDialogModule,
     MatButtonModule,
+    CookieModule.forRoot()
   ],
   exports: [
     NgCookieConsentComponent
