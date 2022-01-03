@@ -26,7 +26,7 @@ export class NgCookieConsentDialogComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.ngCookieConsentService.hasConsent() == false) {
-      this.openDialog();
+      //this.openDialog();
     }
   }
 
