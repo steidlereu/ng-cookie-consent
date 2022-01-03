@@ -5,6 +5,9 @@ import { DialogContentComponent } from './ng-cookie-consent-dialog/dialog-conten
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import { CookieModule } from 'ngx-cookie';
+import {MatCardModule} from '@angular/material/card';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 
 
@@ -17,6 +20,8 @@ import { CookieModule } from 'ngx-cookie';
   imports: [
     MatDialogModule,
     MatButtonModule,
+    MatCardModule,
+    MatRadioModule,
     CookieModule.forRoot()
   ],
   exports: [

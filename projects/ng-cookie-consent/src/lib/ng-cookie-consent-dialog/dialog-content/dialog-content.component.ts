@@ -22,4 +22,8 @@ export class DialogContentComponent implements OnInit {
       }
     );
   }
+
+  changeDialog(settingsDialog: boolean): void {
+    this.settingsDialog = settingsDialog;
+  }
 }
