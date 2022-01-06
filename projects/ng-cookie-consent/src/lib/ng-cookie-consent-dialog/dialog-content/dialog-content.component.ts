@@ -10,7 +10,6 @@ import { NgCookieConsentService } from '../../ng-cookie-consent.service';
 export class DialogContentComponent implements OnInit {
 
   config: NgCookieConsentConfig | undefined;
-
   settingsDialog = false;
 
   constructor(public ngCookieConsentService: NgCookieConsentService) {}

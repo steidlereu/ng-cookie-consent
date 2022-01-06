@@ -1,4 +1,6 @@
-<div *ngif="settingsDialog; else startscreen">
+<p>Test1</p>
+<div *ngif="settingsDialog">
+    <p>Test2</p>
     <h2 mat-dialog-title>{{config?.cookieBannerSettingsHeaderText}}</h2>
     <mat-dialog-content>
         <div *ngFor="let setting of config?.cookieSettingsArray">
@@ -16,17 +18,18 @@
         </button>
     </mat-dialog-actions>
 </div>
-<ng-template #startscreen>
-<h2 mat-dialog-title>{{config?.cookieBannerHeaderText}}</h2>
-<mat-dialog-content class="mat-typography">
-    <div [innerHTML]="config?.cookieBannerTeaserHtml"></div>
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-    <button mat-flat-button color="primary">
-        {{config?.cookieBannerAcceptButtonText}}
-    </button>
-    <button onclick="changeDialog(true)" mat-stroked-button color="primary">
-        {{config?.cookieBannerSettingsButtonText}}
-    </button>
-</mat-dialog-actions>
-</ng-template>
+<div *ngIf="!settingsDialog">
+  <p>Test3</p>
+  <h2 mat-dialog-title>{{config?.cookieBannerHeaderText}}</h2>
+  <mat-dialog-content class="mat-typography">
+      <div [innerHTML]="config?.cookieBannerTeaserHtml"></div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+      <button mat-flat-button color="primary">
+          {{config?.cookieBannerAcceptButtonText}}
+      </button>
+      <button onclick="changeDialog(true)" mat-stroked-button color="primary">
+          {{config?.cookieBannerSettingsButtonText}}
+      </button>
+  </mat-dialog-actions>
+</div>

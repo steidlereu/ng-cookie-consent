@@ -30,7 +30,11 @@ export class NgCookieConsentService {
       return {};
     }
 
-    return JSON.parse(this.cookieService.get(this.config.cookieName));
+    try {
+      return JSON.parse(this.cookieService.get(this.config.cookieName));
+    } catch (e) {
+      return {};
+    }
   }
 
   hasConsent(): boolean {
@@ -46,5 +50,5 @@ export class NgCookieConsentService {
       );
     }
   }
- 
+
 }
